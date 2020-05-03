@@ -13,7 +13,7 @@ public class SampleServiceImpl extends SampleServiceGrpc.SampleServiceImplBase {
 
     @Override
     public void sampleCall(SampleRequest request, StreamObserver<SampleResponse> responseObserver) {
-        log.info("SampleServiceImpl#sampleCall - {}", request);
+        log.info("SampleServiceImpl#sampleCall - {}, {}", request.getUserId(), request.getMessage());
         SampleResponse sampleResponse = SampleResponse.newBuilder()
                 .setMessage("grpc service response")
                 .build();
