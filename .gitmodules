@@ -1,0 +1,3 @@
+[submodule "grpc-common"]
+	path = grpc-common
+	url = https://github.com/yoonyeoseong/grpc-common.git
