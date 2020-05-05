@@ -11,14 +11,7 @@ public class SampleServiceImpl extends SampleServiceGrpc.SampleServiceImplBase {
 
     @Override
     public void sampleCall(SampleRequest request, StreamObserver<SampleResponse> responseObserver) {
-        log.info("SampleServiceImpl#sampleCall - {}, {}", request.getUserId(), request.getMessage());
-        ExampleRequest exampleRequest = ExampleRequest.newBuilder()
-                .putRequests("a", "a")
-                .putRequests("b", "b")
-                .build();
-        exampleRequest.getRequestsMap();
-        exampleRequest.getRequestsOrDefault("a", "defaultValue");
-        exampleRequest.getRequestsOrThrow("a");
+        log.info("SampleServiceImpl#sampleCall - {}, {}, CurrentThread = {}", request.getUserId(), request.getMessage(), Thread.currentThread().getName());
         SampleResponse sampleResponse = SampleResponse.newBuilder()
                 .setMessage("grpc service response")
                 .build();

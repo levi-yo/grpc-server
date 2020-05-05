@@ -56,8 +56,7 @@ sourceSets {
     main {
         java {
             srcDirs += [
-                    'grpc-common/build/generated/source/proto/main/grpc',
-                    'grpc-common/build/generated/source/proto/main/java'
+                    'grpc-common/src/main/java'
             ]
         }
     }
