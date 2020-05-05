@@ -7,7 +7,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +24,7 @@ public class GrpcRunner implements ApplicationRunner {
         start();
     }
 
-    private void start() throws IOException, InterruptedException {
+    private void start() throws IOException {
         SERVER.start();
         log.info("GrpcRunner#start - listen port = {}", PORT);
 
